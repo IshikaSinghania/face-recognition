@@ -16,7 +16,7 @@ const handleApiCall = (req,res) =>{
 }
 
 
-const handleImagePost = ( db) => (req, res) =>{
+const handleImage = (req, res, db) =>{
 	const { id }= req.body;
 	db('users').where('id', '=', id)
 	.increment('entries',1)
@@ -28,6 +28,6 @@ const handleImagePost = ( db) => (req, res) =>{
 }
 
 module.exports = {
-	handleImagePost,
-	handleApiCall
+	handleImage : handleImage,
+	handleApiCall :handleApiCall
 }
